@@ -1,4 +1,4 @@
-name: dolphin-emulator-kyu
+name: dolphin-fresh
 base: core24
 version: '2603a'
 platforms:
@@ -16,7 +16,7 @@ confinement: strict
 icon: dolphin-emu.svg
 
 apps:
-  dolphin-emulator-kyu:
+  dolphin-fresh:
     command-chain: [override-xdg-paths]
     command: usr/games/dolphin-emu
     desktop: usr/local/share/applications/dolphin-emu.desktop
@@ -87,7 +87,7 @@ parts:
       - -DCMAKE_INSTALL_DATADIR=/usr/share/games
     override-build: |
       craftctl default
-      sed -e 's|Name=Dolphin Emulator|Name=Dolphin Emulator [Kyu]|' -i  $CRAFT_PART_INSTALL/usr/local/share/applications/dolphin-emu.desktop
+      sed -e 's|Name=Dolphin Emulator|Name=Dolphin Fresh|' -i  $CRAFT_PART_INSTALL/usr/local/share/applications/dolphin-emu.desktop
 
   sdl3:
     plugin: cmake
